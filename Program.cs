@@ -1,8 +1,9 @@
-﻿using SingleResposibility.Entity;
+﻿using Microsoft.Practices.Unity;
+using SingleResposibility.Entity;
 using SingleResposibility.Service;
-using SingleResposibility.Utility;
+using SingleResposibility.Repository;
 using System;
-
+using SingleResposibility.Utility;
 
 namespace SingleResposibility
 {
@@ -11,18 +12,42 @@ namespace SingleResposibility
         private IService<Student> _studentService;
         
 
+        public Program(IService<Student> studentService)
+        {
+            this._studentService = studentService;
+        }
+
         public Program()
         {
             _studentService = StudentServiceFactory.CreateStudentService(ServiceType.MySQL);
         }
-        
+
         static void Main(string[] args)
         {
             Print("Solid Principle in C#");
-            var obj = new Program();
+            ManualDI();
 
+            UnityDI();
+            Console.ReadKey();
+        }
+
+        private static void UnityDI()
+        {
+            Print("\nUnity DI");
+            var unityContainer = new UnityContainer();
+            unityContainer.RegisterType<IService<Student>, StudentService>();
+            unityContainer.RegisterType<IRepository<Student>, MySqlStudentRepository>();
+            unityContainer.RegisterType<ILogger, FileLogger>();
+            var obj = unityContainer.Resolve<Program>();
+            obj.DisplayList();
+        }
+
+        private static void ManualDI()
+        {
+            var obj = new Program();
+            Print("Manula DI.....");
             Print("Creating four instances of students");
-            Student student1 = new Student { Id = 1, Name = "Bijay", Height = 5.8d};
+            Student student1 = new Student { Id = 1, Name = "Bijay", Height = 5.8d };
             Student student2 = new Student { Id = 2, Name = "Ajay", Height = 5.7d };
             Student student3 = new Student { Id = 3, Name = "Jhon", Height = 6.0d };
             Student student4 = new Student { Id = 4, Name = "Doe", Height = 5.0d };
@@ -60,7 +85,6 @@ namespace SingleResposibility
 
             Print("Info of student 2");
             obj.Display(2);
-            Console.ReadKey();
         }
 
         private void Display(int v)

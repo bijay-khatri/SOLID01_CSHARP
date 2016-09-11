@@ -9,6 +9,17 @@ namespace SingleResposibility.Repository
 {
     class MySqlStudentRepository : IRepository<Student>
     {
+        /**
+         * Table Structure (PK and AUTO INCREMENT NOT SHOWN)
+         * CREATE TABLE `students` (
+                                    `id` int(11) NOT NULL,
+                                    `name` varchar(50) NOT NULL,
+                                    `height` double NOT NULL
+                                    );
+         * 
+         * 
+         *  
+         */
         private readonly string _connectionString = 
             @"server=localhost;user=root;password=;database=testdb";
         ILogger logger;
