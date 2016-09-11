@@ -9,6 +9,7 @@ namespace SingleResposibility.Repository
 {
     class InMemoryStudentRepository : IRepository<Student>
     {
+        //Map as a in memomry database
         IDictionary<int, Student> db = new Dictionary<int, Student>();
         ILogger logger;
 
@@ -35,6 +36,9 @@ namespace SingleResposibility.Repository
 
         public bool Delete(Student student)
         {
+            //check if the student is actually in the database
+            //can cause N+1 but it's okay now
+
             if (db[student.Id] != student) throw new Exception("Exception: trying to delete non existing object");
             try
             {
@@ -52,6 +56,7 @@ namespace SingleResposibility.Repository
 
         public bool Update(Student student)
         {
+            //TODO: what if Object being updated in not in the database ?
             try
             {
                 this.db[student.Id] = student;
@@ -65,9 +70,12 @@ namespace SingleResposibility.Repository
             return true;
         }
 
+       
         public IList<Student> Read()
         {
             var result = db.Values.ToList();
+
+            //Programming to interface or LSP
             IList<Student> students = new List<Student>();
 
             foreach (var student in result)
