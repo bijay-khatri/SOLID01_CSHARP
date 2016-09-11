@@ -1,0 +1,6 @@
+C:\Users\bijay\documents\visual studio 2015\Projects\SOLID\SingleResposibility\bin\Debug\SingleResposibility.exe.config
+C:\Users\bijay\documents\visual studio 2015\Projects\SOLID\SingleResposibility\bin\Debug\SingleResposibility.exe
+C:\Users\bijay\documents\visual studio 2015\Projects\SOLID\SingleResposibility\bin\Debug\SingleResposibility.pdb
+C:\Users\bijay\documents\visual studio 2015\Projects\SOLID\SingleResposibility\obj\Debug\SingleResposibility.csprojResolveAssemblyReference.cache
+C:\Users\bijay\documents\visual studio 2015\Projects\SOLID\SingleResposibility\obj\Debug\SingleResposibility.exe
+C:\Users\bijay\documents\visual studio 2015\Projects\SOLID\SingleResposibility\obj\Debug\SingleResposibility.pdb
