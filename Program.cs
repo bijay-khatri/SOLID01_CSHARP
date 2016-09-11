@@ -1,12 +1,8 @@
 ﻿using SingleResposibility.Entity;
-using SingleResposibility.Repository;
 using SingleResposibility.Service;
 using SingleResposibility.Utility;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace SingleResposibility
 {
@@ -17,7 +13,7 @@ namespace SingleResposibility
 
         public Program()
         {
-            _studentService = StudentServiceFactory.CreateStudentService();
+            _studentService = StudentServiceFactory.CreateStudentService(ServiceType.MySQL);
         }
         
         static void Main(string[] args)
@@ -25,23 +21,26 @@ namespace SingleResposibility
             Print("Solid Principle in C#");
             var obj = new Program();
 
-            Student student1 = new Student { Id = 1, Name = "Bijay", height = 5.8d};
-            Student student2 = new Student { Id = 2, Name = "Ajay", height = 5.7d };
-            Student student3 = new Student { Id = 3, Name = "Jhon", height = 6.0d };
-            Student student4 = new Student { Id = 4, Name = "Doe", height = 5.0d };
+            Print("Creating four instances of students");
+            Student student1 = new Student { Id = 1, Name = "Bijay", Height = 5.8d};
+            Student student2 = new Student { Id = 2, Name = "Ajay", Height = 5.7d };
+            Student student3 = new Student { Id = 3, Name = "Jhon", Height = 6.0d };
+            Student student4 = new Student { Id = 4, Name = "Doe", Height = 5.0d };
 
+            Print("Saving two instances of students");
             obj.Save(student1);
             obj.Save(student2);
 
             obj.DisplayList();
 
+            Print("Saving another two instances of students");
             obj.Save(student3);
             obj.Save(student4);
 
             obj.DisplayList();
 
-            Print("Updating the value of height for student1 ");
-            student1.height = 9.9d;
+            Print("Updating the value of Height for student1 ");
+            student1.Height = 9.9d;
             obj.Update(student1);
 
             obj.DisplayList();

@@ -4,3 +4,9 @@ C:\Users\bijay\documents\visual studio 2015\Projects\SOLID\SingleResposibility\b
 C:\Users\bijay\documents\visual studio 2015\Projects\SOLID\SingleResposibility\obj\Debug\SingleResposibility.csprojResolveAssemblyReference.cache
 C:\Users\bijay\documents\visual studio 2015\Projects\SOLID\SingleResposibility\obj\Debug\SingleResposibility.exe
 C:\Users\bijay\documents\visual studio 2015\Projects\SOLID\SingleResposibility\obj\Debug\SingleResposibility.pdb
+C:\Users\bijay\documents\visual studio 2015\Projects\SOLID\SingleResposibility\bin\Debug\EntityFramework.dll
+C:\Users\bijay\documents\visual studio 2015\Projects\SOLID\SingleResposibility\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\bijay\documents\visual studio 2015\Projects\SOLID\SingleResposibility\bin\Debug\MySql.Data.dll
+C:\Users\bijay\documents\visual studio 2015\Projects\SOLID\SingleResposibility\bin\Debug\mysql.data.entity.EF6.dll
+C:\Users\bijay\documents\visual studio 2015\Projects\SOLID\SingleResposibility\bin\Debug\EntityFramework.xml
+C:\Users\bijay\documents\visual studio 2015\Projects\SOLID\SingleResposibility\bin\Debug\EntityFramework.SqlServer.xml

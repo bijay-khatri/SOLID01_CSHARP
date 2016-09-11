@@ -10,11 +10,11 @@ namespace SingleResposibility.Entity
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public double height { get; set; }
+        public double Height { get; set; }
 
         public override string ToString()
         {
-            return $"[Name = {Name}, Height = {height}]";
+            return $"[Name = {Name}, Height = {Height}]";
         }
     }
 }
