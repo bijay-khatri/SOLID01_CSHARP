@@ -9,7 +9,7 @@ namespace SingleResposibility.Repository
 {
     class InMemoryStudentRepository : IRepository<Student>
     {
-        //Map as a in memomry database
+        //Map as an in memomry database
         IDictionary<int, Student> db = new Dictionary<int, Student>();
         ILogger logger;
 
@@ -28,7 +28,7 @@ namespace SingleResposibility.Repository
             catch (Exception ex)
             {
                 Console.WriteLine("Cannot Save. Try again later");
-                logger.Log(ex.Message);
+                logger.Log<string>(ex.Message);
 
             }
             return true;
@@ -47,7 +47,7 @@ namespace SingleResposibility.Repository
             catch (Exception ex)
             {
                 Console.WriteLine("Cannot Update. Try again later");
-                logger.Log(ex.Message);
+                logger.Log<string>(ex.Message);
 
             }
             return true;
@@ -64,7 +64,7 @@ namespace SingleResposibility.Repository
             catch (Exception ex)
             {
                 Console.WriteLine("Cannot Update. Try again later");
-                logger.Log(ex.Message);
+                logger.Log<string>(ex.Message);
 
             }
             return true;

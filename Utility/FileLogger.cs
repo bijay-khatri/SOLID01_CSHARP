@@ -9,11 +9,12 @@ namespace SingleResposibility.Utility
 
     public class FileLogger : ILogger
     {
-        public void Log(string message)
+        public void Log<T>(T message)
         {
             //TODO : File logging
             Console.WriteLine($"{message} -> logged successfully to file");
         }
+        
     }
 
 }

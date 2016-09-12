@@ -50,7 +50,8 @@ namespace SingleResposibility.Repository
             catch(MySqlException e)
             {
                 Console.WriteLine("Exception while inserting");
-                logger.Log(e.Message);
+                //checking the generics by specifying the MySQLException as T
+                logger.Log<MySqlException>(e);
                 flag = false;
             }
             finally
@@ -79,7 +80,7 @@ namespace SingleResposibility.Repository
             catch (MySqlException e)
             {
                 Console.WriteLine("Exception while inserting");
-                logger.Log(e.Message);
+                logger.Log<string>(e.Message);
                 flag = false;
             }
             finally
@@ -118,7 +119,7 @@ namespace SingleResposibility.Repository
             catch(MySqlException e)
             {
                 Console.WriteLine("Error while reading");
-                logger.Log(e.Message);
+                logger.Log<string>(e.Message);
                
             }
             finally
@@ -163,7 +164,7 @@ namespace SingleResposibility.Repository
             catch (Exception e)
             {
                 Console.WriteLine("Error while reading");
-                logger.Log(e.Message);
+                logger.Log<string>(e.Message);
             }
             finally
             {
@@ -190,7 +191,7 @@ namespace SingleResposibility.Repository
             catch (MySqlException e)
             {
                 Console.WriteLine("Exception while updating");
-                logger.Log(e.Message);
+                logger.Log<string>(e.Message);
                 flag = false;
             }
             finally
@@ -225,7 +226,7 @@ namespace SingleResposibility.Repository
             catch (MySqlException e)
             {
                 Console.WriteLine("Error occured while closing...");
-                logger.Log(e.Message);
+                logger.Log<string>(e.Message);
                 return false;
             }
             return true;
