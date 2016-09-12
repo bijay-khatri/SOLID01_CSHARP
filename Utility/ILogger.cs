@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SingleResposibility.Utility
 {
-    internal interface ILogger
+    public interface ILogger
     {
         void Log(string message);
     }

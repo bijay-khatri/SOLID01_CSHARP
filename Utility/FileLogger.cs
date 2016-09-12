@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace SingleResposibility.Utility
 {
 
-    class FileLogger : ILogger
+    public class FileLogger : ILogger
     {
         public void Log(string message)
         {

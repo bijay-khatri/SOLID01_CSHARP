@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SingleResposibility.Utility
 {
-    enum ServiceType
+    public enum ServiceType
     {
         INMEMORY, MySQL
     }
